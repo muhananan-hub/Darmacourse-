@@ -1,246 +1,161 @@
-export default function DarmaCourseWebsite() { return ( <div className="min-h-screen bg-white overflow-hidden text-gray-800 font-sans"> {/* Decorative Shapes */} <div className="absolute top-0 left-0 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div> <div className="absolute top-40 right-0 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
+export default function DarmaCourseWebsite() { return ( <div className="min-h-screen bg-white text-gray-800"> {/* Hero Section */} <section className="bg-blue-700 text-white py-20 px-6"> <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center"> <div> <h1 className="text-5xl font-bold leading-tight mb-6"> DARMA COURSE </h1> <p className="text-lg mb-6"> Tempat belajar terbaik untuk anak-anak, remaja, dan dewasa. Program modern dengan pengajar profesional. </p>
 
-{/* Hero Section */}
-  <section className="relative bg-white py-24 px-6">
-    <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
-      <div className="relative z-10">
-        <div className="inline-block bg-blue-100 text-blue-700 px-5 py-2 rounded-full font-semibold mb-6">
-          English Course & Education Center
-        </div>
-
-        <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-          Belajar Bahasa Inggris Lebih
-          <span className="text-blue-700"> Modern & Menyenangkan</span>
-        </h1>
-
-        <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-xl">
-          DARMA COURSE menyediakan program belajar bahasa Inggris untuk
-          anak-anak, dewasa, hotel & travel, serta study tour dengan metode
-          interaktif dan profesional.
-        </p>
-
-        <div className="flex flex-wrap gap-4">
-          <button className="bg-blue-700 hover:bg-blue-800 transition text-white px-8 py-4 rounded-2xl shadow-xl font-semibold">
+<div className="flex gap-4 flex-wrap">
+          <button className="bg-white text-blue-700 px-6 py-3 rounded-2xl font-semibold shadow-lg hover:scale-105 transition">
             Daftar Sekarang
           </button>
 
-          <button className="border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white transition px-8 py-4 rounded-2xl font-semibold">
-            Hubungi Kami
+          <button className="border border-white px-6 py-3 rounded-2xl hover:bg-white hover:text-blue-700 transition">
+            Lihat Program
           </button>
         </div>
       </div>
 
-      <div className="relative flex justify-center">
-        <div className="absolute -top-8 -left-8 w-32 h-32 bg-blue-200 rounded-3xl rotate-12 opacity-50"></div>
-        <div className="absolute bottom-0 right-0 w-40 h-40 bg-blue-100 rounded-full opacity-60"></div>
-
-        <div className="relative bg-white rounded-[40px] p-4 shadow-2xl border border-gray-100 max-w-lg z-10">
-          <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
-            alt="DARMA COURSE"
-            className="rounded-[30px] w-full h-[500px] object-cover"
-          />
+      <div className="bg-white/10 rounded-3xl p-10 backdrop-blur-sm shadow-2xl">
+        <div className="aspect-video rounded-2xl bg-white/20 flex items-center justify-center text-xl font-semibold">
+          Tambahkan Foto / Logo Disini
         </div>
       </div>
     </div>
   </section>
 
-  {/* About Section */}
-  <section className="py-24 px-6 bg-gradient-to-b from-white to-blue-50 relative">
-    <div className="max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-5">
-          Kenapa Memilih <span className="text-blue-700">DARMA COURSE?</span>
-        </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Tempat belajar bahasa Inggris yang nyaman, modern, dan cocok untuk
-          semua kalangan.
-        </p>
-      </div>
+  {/* Tentang */}
+  <section className="py-20 px-6">
+    <div className="max-w-5xl mx-auto text-center">
+      <h2 className="text-4xl font-bold text-blue-700 mb-6">
+        Tentang Kami
+      </h2>
 
-      <div className="grid md:grid-cols-3 gap-8">
-        <div className="relative bg-white rounded-[32px] p-10 shadow-xl border border-blue-100 overflow-hidden group hover:-translate-y-2 transition duration-300">
-          <div className="absolute top-0 right-0 w-28 h-28 bg-blue-100 rounded-full -mr-10 -mt-10"></div>
-
-          <div className="relative z-10">
-            <div className="w-16 h-16 rounded-2xl bg-blue-700 text-white flex items-center justify-center text-3xl mb-6">
-              👩‍🏫
-            </div>
-
-            <h3 className="text-2xl font-bold mb-4 text-gray-900">
-              Pengajar Profesional
-            </h3>
-
-            <p className="text-gray-600 leading-relaxed">
-              Dibimbing oleh pengajar berpengalaman dengan metode belajar
-              modern dan mudah dipahami.
-            </p>
-          </div>
-        </div>
-
-        <div className="relative bg-white rounded-[32px] p-10 shadow-xl border border-blue-100 overflow-hidden group hover:-translate-y-2 transition duration-300">
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-100 rounded-full -ml-10 -mb-10"></div>
-
-          <div className="relative z-10">
-            <div className="w-16 h-16 rounded-2xl bg-blue-700 text-white flex items-center justify-center text-3xl mb-6">
-              📖
-            </div>
-
-            <h3 className="text-2xl font-bold mb-4 text-gray-900">
-              Belajar Interaktif
-            </h3>
-
-            <p className="text-gray-600 leading-relaxed">
-              Kegiatan belajar dibuat menyenangkan dengan latihan speaking,
-              listening, dan praktik langsung.
-            </p>
-          </div>
-        </div>
-
-        <div className="relative bg-white rounded-[32px] p-10 shadow-xl border border-blue-100 overflow-hidden group hover:-translate-y-2 transition duration-300">
-          <div className="absolute top-0 left-0 w-24 h-24 bg-blue-100 rotate-45 -ml-10 -mt-10"></div>
-
-          <div className="relative z-10">
-            <div className="w-16 h-16 rounded-2xl bg-blue-700 text-white flex items-center justify-center text-3xl mb-6">
-              🎯
-            </div>
-
-            <h3 className="text-2xl font-bold mb-4 text-gray-900">
-              Program Lengkap
-            </h3>
-
-            <p className="text-gray-600 leading-relaxed">
-              Tersedia kelas anak-anak, dewasa, hotel & travel, hingga study
-              tour.
-            </p>
-          </div>
-        </div>
-      </div>
+      <p className="text-lg leading-relaxed text-gray-600">
+        DARMA COURSE adalah lembaga kursus modern yang menyediakan
+        program belajar berkualitas untuk anak-anak, dewasa, program
+        hotel & travel, serta study tour.
+      </p>
     </div>
   </section>
 
-  {/* Programs */}
-  <section className="py-24 px-6 bg-white">
-    <div className="max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-5">
-          Program Kursus
-        </h2>
-        <p className="text-lg text-gray-600">
-          Pilihan kelas terbaik sesuai kebutuhan belajar Anda.
-        </p>
-      </div>
+  {/* Program */}
+  <section className="bg-gray-100 py-20 px-6">
+    <div className="max-w-6xl mx-auto">
+      <h2 className="text-4xl font-bold text-center text-blue-700 mb-14">
+        Program Belajar
+      </h2>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {[
           {
-            icon: '📚',
-            title: 'Anak-anak',
-            desc: 'Belajar bahasa Inggris dasar dengan metode yang seru dan menyenangkan.'
+            title: "Program Anak-anak",
+            desc: "Belajar menyenangkan untuk anak dengan metode interaktif.",
           },
           {
-            icon: '🎓',
-            title: 'Dewasa',
-            desc: 'Tingkatkan speaking dan grammar untuk kebutuhan kerja dan komunikasi.'
+            title: "Program Dewasa",
+            desc: "Kelas khusus untuk meningkatkan kemampuan bahasa dan komunikasi.",
           },
           {
-            icon: '🏨',
-            title: 'Hotel & Travel',
-            desc: 'Program hospitality dan pariwisata untuk dunia kerja profesional.'
+            title: "Hotel & Travel",
+            desc: "Persiapan kerja profesional di bidang hospitality dan pariwisata.",
           },
           {
-            icon: '✈️',
-            title: 'Study Tour',
-            desc: 'Belajar sambil praktik langsung melalui kegiatan edukatif.'
-          }
+            title: "Study Tour",
+            desc: "Belajar sambil eksplorasi pengalaman baru yang seru.",
+          },
         ].map((item, index) => (
           <div
             key={index}
-            className="relative bg-gradient-to-br from-blue-50 to-white rounded-[30px] p-8 shadow-lg border border-blue-100 overflow-hidden hover:-translate-y-2 transition"
+            className="bg-white rounded-3xl p-6 shadow-lg hover:-translate-y-2 transition"
           >
-            <div className="absolute right-0 top-0 w-24 h-24 bg-blue-100 rounded-full -mr-10 -mt-10"></div>
-
-            <div className="relative z-10">
-              <div className="text-5xl mb-6">{item.icon}</div>
-              <h3 className="text-2xl font-bold mb-4 text-blue-700">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-            </div>
+            <div className="h-16 w-16 rounded-2xl bg-blue-700 mb-5"></div>
+            <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+            <p className="text-gray-600">{item.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  {/* Schedule */}
-  <section className="py-24 px-6 bg-blue-700 relative overflow-hidden">
-    <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full"></div>
-    <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/10 rounded-full"></div>
-
-    <div className="relative max-w-5xl mx-auto text-center text-white z-10">
-      <h2 className="text-4xl font-extrabold mb-6">Jadwal Kursus</h2>
-
-      <p className="text-lg text-blue-100 mb-12">
-        Jadwal belajar fleksibel dan nyaman untuk semua siswa.
-      </p>
-
-      <div className="grid md:grid-cols-3 gap-6 mb-10">
-        {['Kamis', 'Jumat', 'Sabtu'].map((day, index) => (
-          <div
-            key={index}
-            className="bg-white text-blue-700 rounded-[28px] py-8 shadow-xl text-2xl font-bold"
-          >
-            {day}
-          </div>
-        ))}
-      </div>
-
-      <div className="inline-block bg-white/20 backdrop-blur-lg px-10 py-5 rounded-3xl text-2xl font-bold border border-white/20">
-        Jam 4:00 - 6:00 WIB
-      </div>
-    </div>
-  </section>
-
-  {/* CTA */}
-  <section className="py-24 px-6 bg-white text-center relative overflow-hidden">
-    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-100 rounded-full blur-3xl opacity-30"></div>
-
-    <div className="relative max-w-4xl mx-auto z-10">
-      <h2 className="text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-        Mulai Belajar Bersama
-        <span className="text-blue-700"> DARMA COURSE</span>
+  {/* Jadwal */}
+  <section className="py-20 px-6">
+    <div className="max-w-5xl mx-auto">
+      <h2 className="text-4xl font-bold text-center text-blue-700 mb-12">
+        Jadwal Kursus
       </h2>
 
-      <p className="text-lg text-gray-600 leading-relaxed mb-10">
-        Tingkatkan kemampuan bahasa Inggris Anda dengan suasana belajar yang
-        modern, nyaman, dan profesional.
+      <div className="bg-white rounded-3xl shadow-xl overflow-hidden border">
+        <div className="grid grid-cols-2 bg-blue-700 text-white font-semibold text-lg">
+          <div className="p-5">Hari</div>
+          <div className="p-5">Jam</div>
+        </div>
+
+        {[
+          ["Kamis", "16:00 - 18:00 WIB"],
+          ["Jum'at", "16:00 - 18:00 WIB"],
+          ["Sabtu", "16:00 - 18:00 WIB"],
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="grid grid-cols-2 border-t text-gray-700"
+          >
+            <div className="p-5">{item[0]}</div>
+            <div className="p-5">{item[1]}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Testimoni */}
+  <section className="bg-blue-700 text-white py-20 px-6">
+    <div className="max-w-6xl mx-auto">
+      <h2 className="text-4xl font-bold text-center mb-14">
+        Testimoni Siswa
+      </h2>
+
+      <div className="grid md:grid-cols-3 gap-8">
+        {[
+          "Belajarnya seru dan mudah dipahami.",
+          "Pengajarnya ramah dan profesional.",
+          "Sangat membantu meningkatkan kemampuan bahasa Inggris.",
+        ].map((text, index) => (
+          <div
+            key={index}
+            className="bg-white text-gray-700 rounded-3xl p-8 shadow-xl"
+          >
+            <p className="mb-5">“{text}”</p>
+            <div className="font-bold text-blue-700">Nama Siswa</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Kontak */}
+  <section className="py-20 px-6">
+    <div className="max-w-5xl mx-auto text-center">
+      <h2 className="text-4xl font-bold text-blue-700 mb-6">
+        Hubungi Kami
+      </h2>
+
+      <p className="text-lg text-gray-600 mb-10">
+        Tambahkan alamat, nomor WhatsApp, email, dan media sosial Anda di sini.
       </p>
 
-      <button className="bg-blue-700 hover:bg-blue-800 text-white px-10 py-5 rounded-2xl shadow-2xl text-lg font-bold transition hover:scale-105">
-        Gabung Sekarang
-      </button>
+      <div className="flex flex-wrap justify-center gap-4">
+        <button className="bg-blue-700 text-white px-8 py-4 rounded-2xl shadow-lg hover:scale-105 transition">
+          WhatsApp
+        </button>
+
+        <button className="border border-blue-700 text-blue-700 px-8 py-4 rounded-2xl hover:bg-blue-700 hover:text-white transition">
+          Instagram
+        </button>
+      </div>
     </div>
   </section>
 
   {/* Footer */}
-  <footer className="bg-gray-900 text-gray-300 py-12 px-6">
-    <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8 items-center">
-      <div>
-        <h3 className="text-3xl font-bold text-white mb-3">
-          DARMA COURSE
-        </h3>
-        <p className="max-w-lg text-gray-400 leading-relaxed">
-          Kursus bahasa Inggris modern untuk anak-anak, dewasa, hotel &
-          travel, dan study tour.
-        </p>
-      </div>
-
-      <div className="text-center md:text-right space-y-2">
-        <p>WhatsApp : +62 xxx xxxx xxxx</p>
-        <p>Email : darmacourse@gmail.com</p>
-      </div>
-    </div>
+  <footer className="bg-gray-900 text-white py-8 text-center">
+    <p>
+      © 2026 DARMA COURSE — Semua Hak Dilindungi.
+    </p>
   </footer>
 </div>
 
