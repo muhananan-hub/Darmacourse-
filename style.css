@@ -291,3 +291,106 @@ footer{
   }
 
 }
+/* NAVBAR SCROLL */
+.active-nav{
+  background:#0d6efd;
+  transition:0.4s;
+}
+
+.active-nav h2,
+.active-nav a{
+  color:white;
+}
+
+/* FORM */
+.form-section{
+  padding:100px 8%;
+  text-align:center;
+}
+
+.form-section h2{
+  font-size:40px;
+  margin-bottom:40px;
+  color:#0d1b3d;
+}
+
+form{
+  max-width:600px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+form input{
+  padding:18px;
+  border:none;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  font-size:16px;
+}
+
+form button{
+  padding:18px;
+  border:none;
+  border-radius:15px;
+  background:#0d6efd;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+form button:hover{
+  transform:translateY(-5px);
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  right:25px;
+  bottom:25px;
+  width:65px;
+  height:65px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:30px;
+  text-decoration:none;
+  color:white;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  z-index:1000;
+}
+
+/* BUTTON TOP */
+#topBtn{
+  position:fixed;
+  bottom:110px;
+  right:30px;
+  width:55px;
+  height:55px;
+  border:none;
+  border-radius:50%;
+  background:#0d6efd;
+  color:white;
+  font-size:22px;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  z-index:1000;
+}
+
+/* ANIMATION CARD */
+.card{
+  opacity:0;
+  transform:translateY(50px);
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+  transition:1s;
+}
