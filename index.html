@@ -1,138 +1,564 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DARMA COURSE</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BestDrive</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#f3f4f6;
+      color:#222;
+    }
+
+    .topbar{
+      background:#00a5ff;
+      padding:14px;
+      position:sticky;
+      top:0;
+      z-index:999;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .search-box{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .menu-btn{
+      color:white;
+      font-size:26px;
+    }
+
+    .search{
+      flex:1;
+      background:white;
+      border-radius:14px;
+      padding:12px 15px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .search input{
+      border:none;
+      outline:none;
+      width:100%;
+      font-size:16px;
+    }
+
+    .hero{
+      background:#00a5ff;
+      padding:20px;
+      color:white;
+    }
+
+    .hero h1{
+      font-size:30px;
+      margin-bottom:10px;
+    }
+
+    .hero p{
+      opacity:0.9;
+      margin-bottom:20px;
+    }
+
+    .btn-group{
+      display:flex;
+      gap:10px;
+    }
+
+    .btn{
+      flex:1;
+      text-align:center;
+      padding:12px;
+      border-radius:12px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn-login{
+      border:2px solid white;
+      color:white;
+    }
+
+    .btn-register{
+      background:white;
+      color:#00a5ff;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .menu-grid{
+      background:white;
+      padding:20px 15px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px 10px;
+      text-align:center;
+    }
+
+    .menu-item{
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .menu-item:hover{
+      transform:scale(1.05);
+    }
+
+    .icon-circle{
+      width:60px;
+      height:60px;
+      border-radius:50%;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-size:24px;
+      margin-bottom:8px;
+      box-shadow:0 5px 12px rgba(0,0,0,0.15);
+    }
+
+    .blue{background:#1565c0;}
+    .sky{background:#29b6f6;}
+    .red{background:#ff5a5f;}
+    .green{background:#2ecc71;}
+    .orange{background:#f9a825;}
+    .purple{background:#8e44ad;}
+    .teal{background:#009688;}
+    .pink{background:#ff4081;}
+
+    .menu-item p{
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .banner{
+      margin:15px;
+      border-radius:20px;
+      overflow:hidden;
+      position:relative;
+      height:240px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .banner img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .banner-content{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color:white;
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+    }
+
+    .banner-content h2{
+      font-size:28px;
+      margin-bottom:8px;
+    }
+
+    .banner-content button{
+      background:#ff7b00;
+      border:none;
+      color:white;
+      padding:12px;
+      border-radius:12px;
+      font-weight:bold;
+      width:150px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .banner-content button:hover{
+      transform:scale(1.05);
+    }
+
+    .section{
+      padding:15px;
+    }
+
+    .section-title{
+      font-size:28px;
+      font-weight:bold;
+      margin-bottom:15px;
+    }
+
+    .promo-scroll{
+      display:flex;
+      overflow-x:auto;
+      gap:15px;
+      padding-bottom:10px;
+    }
+
+    .promo-scroll::-webkit-scrollbar{
+      display:none;
+    }
+
+    .card{
+      min-width:230px;
+      background:white;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 4px 12px rgba(0,0,0,0.12);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card img{
+      width:100%;
+      height:150px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:12px;
+    }
+
+    .card-content h3{
+      font-size:22px;
+      margin-bottom:8px;
+    }
+
+    .price{
+      color:#ff6f00;
+      font-size:26px;
+      font-weight:bold;
+    }
+
+    .rating{
+      color:#2196f3;
+      font-weight:bold;
+      margin-bottom:8px;
+    }
+
+    .bottom-nav{
+      position:fixed;
+      bottom:0;
+      width:100%;
+      background:white;
+      display:flex;
+      justify-content:space-around;
+      padding:10px 0;
+      box-shadow:0 -3px 12px rgba(0,0,0,0.12);
+      z-index:999;
+    }
+
+    .bottom-item{
+      text-align:center;
+      color:#666;
+      font-size:13px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .bottom-item i{
+      font-size:22px;
+      margin-bottom:5px;
+    }
+
+    .bottom-item.active{
+      color:#0099ff;
+      font-weight:bold;
+    }
+
+    .bottom-item:hover{
+      color:#0099ff;
+    }
+
+    .partner-section{
+      background:white;
+      margin-top:20px;
+      padding:30px 20px;
+    }
+
+    .partner-title{
+      text-align:center;
+      font-size:34px;
+      margin-bottom:25px;
+      font-weight:bold;
+    }
+
+    .logo-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      align-items:center;
+      text-align:center;
+    }
+
+    .logo-box{
+      background:#f7f7f7;
+      border-radius:16px;
+      padding:20px;
+      font-weight:bold;
+      color:#444;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .spacer{
+      height:90px;
+    }
+
+  </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <h2>DARMA COURSE</h2>
-
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#program">Program</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-
-    <div class="hero-text">
-      <h1>Belajar Bahasa Inggris Jadi Lebih Menyenangkan</h1>
-      <p>
-        Kursus modern untuk anak-anak dengan metode belajar interaktif,
-        menyenangkan dan penuh animasi.
-      </p>
-
-      <button>Daftar Sekarang</button>
-    </div>
-
-    <div class="slider">
-      <div class="slides">
-        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop" alt="slide1">
-
-        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1200&auto=format&fit=crop" alt="slide2">
-
-        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop" alt="slide3">
-      </div>
-    </div>
-
-  </section>
-
-  <!-- SHAPES -->
-  <div class="circle one"></div>
-  <div class="circle two"></div>
-
-  <!-- PROGRAM -->
-  <section class="program" id="program">
-
-    <h2>Program Belajar</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <div class="icon">📚</div>
-        <h3>Reading</h3>
-        <p>Belajar membaca bahasa Inggris dengan mudah.</p>
+  <!-- TOP -->
+  <div class="topbar">
+    <div class="search-box">
+      <div class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
       </div>
 
-      <div class="card">
-        <div class="icon">🗣️</div>
-        <h3>Speaking</h3>
-        <p>Latihan berbicara percaya diri setiap hari.</p>
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Cari hotel, tiket, destinasi..." />
       </div>
+    </div>
+  </div>
 
-      <div class="card">
-        <div class="icon">✍️</div>
-        <h3>Writing</h3>
-        <p>Belajar menulis bahasa Inggris dengan benar.</p>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>BestDrive</h1>
+    <p>Nikmati perjalanan dan liburan terbaikmu sekarang.</p>
+
+    <div class="btn-group">
+      <div class="btn btn-login">Log In</div>
+      <div class="btn btn-register">Daftar</div>
+    </div>
+  </div>
+
+  <!-- MENU -->
+  <div class="menu-grid">
+
+    <div class="menu-item">
+      <div class="icon-circle blue">
+        <i class="fa-solid fa-hotel"></i>
       </div>
-
+      <p>Hotel</p>
     </div>
 
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-
-    <div class="about-image">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="about">
+    <div class="menu-item">
+      <div class="icon-circle sky">
+        <i class="fa-solid fa-plane"></i>
+      </div>
+      <p>Tiket Pesawat</p>
     </div>
 
-    <div class="about-text">
-      <h2>Mengapa Memilih DARMA COURSE?</h2>
-      <p>
-        Kami membantu anak-anak belajar bahasa Inggris dengan cara modern,
-        santai, dan menyenangkan.
-      </p>
-
-      <ul>
-        <li>✔ Guru ramah dan profesional</li>
-        <li>✔ Materi mudah dipahami</li>
-        <li>✔ Suasana belajar menyenangkan</li>
-        <li>✔ Banyak aktivitas interaktif</li>
-      </ul>
+    <div class="menu-item">
+      <div class="icon-circle red">
+        <i class="fa-solid fa-map-location-dot"></i>
+      </div>
+      <p>Xperience</p>
     </div>
+
+    <div class="menu-item">
+      <div class="icon-circle green">
+        <i class="fa-solid fa-bus"></i>
+      </div>
+      <p>Tiket Bus</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="icon-circle orange">
+        <i class="fa-solid fa-train"></i>
+      </div>
+      <p>Kereta Api</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="icon-circle purple">
+        <i class="fa-solid fa-car"></i>
+      </div>
+      <p>Rental Mobil</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="icon-circle teal">
+        <i class="fa-solid fa-shield-heart"></i>
+      </div>
+      <p>Asuransi</p>
+    </div>
+
+    <div class="menu-item">
+      <div class="icon-circle pink">
+        <i class="fa-solid fa-tags"></i>
+      </div>
+      <p>Promo</p>
+    </div>
+
+  </div>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200" alt="">
     
-  </section>
-<!-- FORM -->
-<section class="form-section">
+    <div class="banner-content">
+      <h2>Liburan Lebih Hemat</h2>
+      <p>Diskon hotel dan tiket hingga 70%</p>
+      <button>Login Sekarang</button>
+    </div>
+  </div>
 
-  <h2>Pendaftaran Siswa</h2>
+  <!-- PROMO -->
+  <div class="section">
 
-  <form>
+    <div class="section-title">Promo Saat Ini</div>
 
-    <input type="text" placeholder="Nama Lengkap">
+    <div class="promo-scroll">
 
-    <input type="text" placeholder="Nomor WhatsApp">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200">
 
-    <input type="text" placeholder="Umur Anak">
+        <div class="card-content">
+          <h3>Bali Beach Resort</h3>
+          <div class="rating">9.2/10 • 2rb ulasan</div>
+          <div class="price">Rp 350.000</div>
+        </div>
+      </div>
 
-    <button type="submit">Daftar Sekarang</button>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200">
 
-  </form>
+        <div class="card-content">
+          <h3>Luxury Hotel</h3>
+          <div class="rating">8.9/10 • 4rb ulasan</div>
+          <div class="price">Rp 420.000</div>
+        </div>
+      </div>
 
-</section>
-  <!-- FOOTER -->
-  <footer id="contact">
-    <h3>DARMA COURSE</h3>
-    <p>Belajar Bahasa Inggris Lebih Seru</p>
-  </footer>
-<script src="script.js"></script>
-  <a href="https://wa.me/6287760389474" class="whatsapp" target="_blank">
-  💬
-  </a>
-  <button onclick="topFunction()" id="topBtn">
-  ↑
-  </button>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200">
+
+        <div class="card-content">
+          <h3>Mountain Resort</h3>
+          <div class="rating">9.5/10 • 6rb ulasan</div>
+          <div class="price">Rp 560.000</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- TRENDING -->
+  <div class="section">
+
+    <div class="section-title">Aktivitas Trending</div>
+
+    <div class="promo-scroll">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200">
+
+        <div class="card-content">
+          <h3>Tiket Wisata</h3>
+          <div class="rating">Promo 20%</div>
+          <div class="price">Rp 120.000</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200">
+
+        <div class="card-content">
+          <h3>Sea World</h3>
+          <div class="rating">Best Seller</div>
+          <div class="price">Rp 180.000</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- PARTNER -->
+  <div class="partner-section">
+
+    <div class="partner-title">Partner Maskapai</div>
+
+    <div class="logo-grid">
+      <div class="logo-box">Garuda</div>
+      <div class="logo-box">Citilink</div>
+      <div class="logo-box">AirAsia</div>
+      <div class="logo-box">Lion Air</div>
+      <div class="logo-box">Scoot</div>
+      <div class="logo-box">Batik Air</div>
+    </div>
+
+  </div>
+
+  <div class="partner-section">
+
+    <div class="partner-title">Hotel Partners</div>
+
+    <div class="logo-grid">
+      <div class="logo-box">Accor</div>
+      <div class="logo-box">Horison</div>
+      <div class="logo-box">IHG</div>
+      <div class="logo-box">Kagum</div>
+      <div class="logo-box">Azana</div>
+      <div class="logo-box">Archipelago</div>
+    </div>
+
+  </div>
+
+  <div class="spacer"></div>
+
+  <!-- BOTTOM NAV -->
+  <div class="bottom-nav">
+
+    <div class="bottom-item active">
+      <i class="fa-solid fa-house"></i>
+      <div>Awal</div>
+    </div>
+
+    <div class="bottom-item">
+      <i class="fa-regular fa-bookmark"></i>
+      <div>Simpan</div>
+    </div>
+
+    <div class="bottom-item">
+      <i class="fa-regular fa-clipboard"></i>
+      <div>Pesanan</div>
+    </div>
+
+    <div class="bottom-item">
+      <i class="fa-regular fa-user"></i>
+      <div>Akun</div>
+    </div>
+
+  </div>
+
 </body>
-</html>
+  </html>
